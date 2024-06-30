@@ -3,8 +3,8 @@ import Nav from "../components/Nav";
 
 const Home = () => {
   return (
-    <div className="h-[80px]">
-      <Nav></Nav>
+    <div>
+      <h1>this is home</h1>
     </div>
   );
 };
