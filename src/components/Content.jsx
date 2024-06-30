@@ -4,8 +4,7 @@ import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 const Content = () => {
   const blog = useLoaderData();
-  const { title, cover_image, published_at, description, tags, body_html } =
-    blog;
+  const { title, cover_image, url, tags, body_html } = blog;
   return (
     <div>
       <div
@@ -30,7 +29,13 @@ const Content = () => {
           ))}
         </div>
         <div className="px-0 py-3 space-y-2">
-          <h3 className="text-2xl font-semibold ">{title}</h3>
+          <a
+            href={url}
+            target="_blank"
+            className="hover:underline text-2xl font-semibold "
+          >
+            {title}
+          </a>
 
           <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
         </div>
